@@ -1,6 +1,7 @@
 package elevator;
 
 public enum ElevatorState {
-    MOVING,
-    WAITING;
+    WAITING,
+    MOVING
+
 }

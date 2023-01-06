@@ -11,5 +11,11 @@ public class Floor {
         this.floorDoor = new Door(this.floorNum);
     }
 
+    public int getFloorNum() {
+        return floorNum;
+    }
 
+    public Door getFloorDoor() {
+        return floorDoor;
+    }
 }
