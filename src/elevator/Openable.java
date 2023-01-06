@@ -1,6 +1,7 @@
 package elevator;
 
 public interface Openable {
-    void open();
-    void close();
+    void openDoor();
+    void closeDoor();
+    boolean isOpened();
 }

@@ -2,5 +2,6 @@ package elevator;
 
 public enum Direction {
     UP,
-    DOWN;
+    DOWN,
+    NONE
 }

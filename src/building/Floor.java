@@ -8,5 +8,8 @@ public class Floor {
 
     public Floor(int floorNum) {
         this.floorNum = floorNum;
+        this.floorDoor = new Door(this.floorNum);
     }
+
+
 }
