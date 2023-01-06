@@ -3,11 +3,13 @@ package actors;
 import elevator.Elevator;
 
 public class Person {
-    private int floorNumber;
-    private int weight;
+    private final int currentFloorNumber;
+    private final int destinationFloorNumber;
+    private final int weight;
 
-    public Person(int floorNumber, int weight) {
-        this.floorNumber = floorNumber;
+    public Person(int currentFloorNumber, int destinationFloorNumber, int weight) {
+        this.currentFloorNumber = currentFloorNumber;
+        this.destinationFloorNumber = destinationFloorNumber;
         this.weight = weight;
     }
 
@@ -15,12 +17,18 @@ public class Person {
         elevator.addRequest(this);
     }
 
-    public int getFloorNumber() {
-        return floorNumber;
+    public int getCurrentFloorNumber() {
+        return currentFloorNumber;
+    }
+
+    public int getDestinationFloorNumber() {
+        return destinationFloorNumber;
     }
 
     public int getWeight() {
         return weight;
     }
+
+
 
 }
