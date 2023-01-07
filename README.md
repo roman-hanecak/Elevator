@@ -25,6 +25,8 @@ Enumerates describes states of elevator, moving or "waiting" and directiong of i
 
 Package main has only 1 class with runnable main.<br />
 Class is basic implementation of scenario, where few people operate with elevator.
+Basic scenario is non-interactive, so if you want change basic scenario you have to change Main.java code by creating new actors or changing existing ones.
+Do not forget call method "requestElevator" for new actors!
 
 ####Short solution description: <br />
 After reading project structure you should know what classes have been implemented :) <br />
@@ -50,11 +52,8 @@ IntelliJ idea IDE for project development.<br />
 GitHub VCS repository.<br />
 
 ####Steps for compilation:
+Project contains xml files with stored structure, which is needed for successful build and run.<br />
 
-
-
-
-
-javac -d elevatorC src/elevator/*.java src/building/*.java src/actors/*.java src/main/*.java
-
-java -cp elevatorC {Main}
+Easiest way to build and run application is to open project in IntelliJ IDEA IDE by button "Open or Import", then select most outer directory named Elevator. When IDE loads project dependencies press button "Build project (Ctrl+F9)" and then "Run Main".
+Project is fully compatible with VS Code IDE. For opening project mark down most outer directory named "Elevator" and select from dropdown menu "Open with Code". When is project loaded navigate to class Main.java, mark down it and from dropdown menu choose "Run Java".
+Then you should see running console aplication of preset scenario.
