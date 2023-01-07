@@ -7,9 +7,9 @@ import java.util.List;
 
 public class Building {
 
-    private List<Floor> floorList = new ArrayList<>();
+    private final List<Floor> floorList = new ArrayList<>();
     private int height = 0;
-    private Elevator buildingElevator;
+    private final Elevator buildingElevator;
 
     public Building(int height) {
         this.height = height;

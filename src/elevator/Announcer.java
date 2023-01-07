@@ -31,11 +31,4 @@ public class Announcer {
         System.out.println("Person entered elevator.");
     }
 
-    public void openDoor(Elevator elevator){
-        System.out.println("Doors open at "+ elevator.getCurrentFloor()+". floor.");
-    }
-
-    public void closeDoor(){
-        System.out.println("Doors are closing.");
-    }
 }

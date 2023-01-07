@@ -2,7 +2,6 @@ package elevator;
 
 import actors.Person;
 import building.Floor;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -14,19 +13,17 @@ public class Elevator implements Movable {
     private int currentFloor;
     private ElevatorState elevatorState;
     private Direction elevatorDirection;
-    private List<Integer> floorsRequested;
-    private List<Floor> floorList;
-    private Door elevatorDoors;
-    private Announcer elevatorAnnouncer;
+    private final List<Integer> floorsRequested;
+    private  List<Floor> floorList;
+    private final Announcer elevatorAnnouncer;
 
-    private List<Person> elevatorRequests;
+    private final List<Person> elevatorRequests;
 
     public Elevator(List<Floor> floorList) {
         this.elevatorState = ElevatorState.WAITING;
         this.elevatorDirection = Direction.NONE;
         this.floorList = floorList;
         this.floorsRequested = new ArrayList<>();
-        this.elevatorDoors = new Door();
         this.currentFloor = 0;
         this. weight = 0;
         this.elevatorAnnouncer = new Announcer();
@@ -54,9 +51,6 @@ public class Elevator implements Movable {
         this.elevatorAnnouncer.poepleLeft();
     }
 
-    public void setCurrentFloor(int currentFloor) {
-        this.currentFloor = currentFloor;
-    }
 
     public void processRequests(){
         for (Person person: elevatorRequests) {
@@ -111,7 +105,6 @@ public class Elevator implements Movable {
         while(getCurrentFloor() != floorNumber){
             switch (checkDirection(floorNumber)) {
                 case NONE:
-                    elevatorDoors.openDoor();
                     break;
                 case UP:
                     if (!isMoving()) {
@@ -171,8 +164,6 @@ public class Elevator implements Movable {
         this.elevatorState = ElevatorState.WAITING;
         this.elevatorDirection = Direction.NONE;
         this.elevatorAnnouncer.stoppedAtFloor(this);
-        this.elevatorDoors.openDoor();
-        this.floorList.get(this.currentFloor).getFloorDoor().openDoor();
         TimeUnit.SECONDS.sleep(1);
     }
 
