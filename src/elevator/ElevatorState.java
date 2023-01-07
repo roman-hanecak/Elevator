@@ -2,6 +2,6 @@ package elevator;
 
 public enum ElevatorState {
     WAITING,
-    MOVING
-
+    MOVING,
+    OVERLOADED
 }

@@ -4,5 +4,5 @@ public interface Movable {
     boolean isMoving();
     void moveUp();
     void moveDown();
-    void stop();
+    void stop() throws InterruptedException;
 }

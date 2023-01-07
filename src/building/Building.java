@@ -13,12 +13,12 @@ public class Building {
 
     public Building(int height) {
         this.height = height;
-        this.buildFloors();
         this.buildingElevator = new Elevator(this.floorList);
+        this.buildFloors();
     }
 
     private void buildFloors(){
-        for (int floor=0;floor<height;floor++){
+        for (int floor=0;floor!=height;floor++){
             floorList.add(new Floor(floor));
         }
     }

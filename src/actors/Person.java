@@ -6,11 +6,13 @@ public class Person {
     private final int currentFloorNumber;
     private final int destinationFloorNumber;
     private final int weight;
+    private boolean hasEntered;
 
     public Person(int currentFloorNumber, int destinationFloorNumber, int weight) {
         this.currentFloorNumber = currentFloorNumber;
         this.destinationFloorNumber = destinationFloorNumber;
         this.weight = weight;
+        this.hasEntered = false;
     }
 
     public void requestElevator(Elevator elevator){
@@ -29,6 +31,11 @@ public class Person {
         return weight;
     }
 
+    public void setHasEntered(boolean hasEntered) {
+        this.hasEntered = hasEntered;
+    }
 
-
+    public boolean hasEntered() {
+        return hasEntered;
+    }
 }
